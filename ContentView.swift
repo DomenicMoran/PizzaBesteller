@@ -34,7 +34,16 @@ struct ContentView: View {
                     .pickerStyle(SegmentedPickerStyle())
                 }
                 Section(header: Text("Lieferung")) {
-                    
+                    TextField("Name", text: $pizza.name)
+                    TextField("Straße", text: $pizza.streetAddress)
+                    TextField("Stadt", text: $pizza.city)
+                }
+                Section {
+                    Button(action: {
+                        
+                    }) {
+                        Text("Kostenpflichtig bestellen")
+                    }.disabled(pizza.isInvalid)
                 }
             }
             .navigationBarTitle("Pizza Bestellung")

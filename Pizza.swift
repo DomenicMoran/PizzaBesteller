@@ -17,4 +17,12 @@ class Pizza: ObservableObject {
     @Published var anzahl = 1
     
     @Published var pizzaSizeIndex = 0
+    
+    @Published var name = ""
+    @Published var streetAddress = ""
+    @Published var city = ""
+    
+    var isInvalid: Bool {
+        return name.isEmpty || streetAddress.isEmpty || city.isEmpty
+    }
 }
